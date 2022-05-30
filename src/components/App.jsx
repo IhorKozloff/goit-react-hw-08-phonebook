@@ -1,7 +1,7 @@
-import { SearchBar} from "components/SearchBar/SearchBar";
-import { ContactsList } from "./ContactsList/ContactsList";
-import { SearchingFilter } from "./SearchingFilter/SearchingFilter";
-import { useFilteredContacts } from 'Hooks/useFilteredContacts'
+// import { SearchBar} from "components/SearchBar/SearchBar";
+// import { ContactsList } from "./ContactsList/ContactsList";
+// import { SearchingFilter } from "./SearchingFilter/SearchingFilter";
+// import { useFilteredContacts } from 'Hooks/useFilteredContacts'
 
 
  
@@ -9,12 +9,13 @@ import { Route, Routes } from "react-router-dom";
 import { Login } from "Pages/Login";
 import { Register } from "Pages/Register";
 import { Layout } from "Pages/Layout";
+import { PhonebookPage } from "Pages/PhonebookPage"
 
 
 
 export const App = () =>  {
 
-  const  {filterValue, setfilterValue, filteredContacts} = useFilteredContacts(); 
+  // const  {filterValue, setfilterValue, filteredContacts} = useFilteredContacts(); 
 
   return (
 
@@ -22,6 +23,7 @@ export const App = () =>  {
       <Route path="/" element={<Layout/>}>
         <Route path="login" element={<Login/>}></Route>
         <Route path="register" element={<Register/>}/>
+        <Route path="phonebook" element={<PhonebookPage/>}/>
       </Route>
       
 

@@ -1,20 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Formik } from 'formik';
 import { InputStyled, DataForm, InputWrapper } from 'components/Forms/AddContactsForm/AddContactsForm.styled';
-import { nanoid } from 'nanoid';
+import { addUserContactOperation } from 'Redux/operations';
+import { useDispatch } from 'react-redux';
 
 
 export const ContactsForm = ({setNewContact}) => {
-
+    const dispatch = useDispatch();
     const onFormSubmit = (values, {resetForm}) => {
             const newContact = {
-                id: nanoid(),
                 name: values.name,
                 number: values.number,
             };
     
-            setNewContact(newContact);
+            dispatch(addUserContactOperation(newContact))
+
+            // setNewContact(newContact);
             resetForm();
     };
 
@@ -53,6 +55,6 @@ export const ContactsForm = ({setNewContact}) => {
 };
 
 
-ContactsForm.propTypes = {
-    setNewContact: PropTypes.func.isRequired,
-};
+// ContactsForm.propTypes = {
+//     setNewContact: PropTypes.func.isRequired,
+// };

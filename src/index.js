@@ -4,19 +4,18 @@ import { BrowserRouter } from "react-router-dom";
 import { App } from 'components/App';
 import './index.css';
 import { Provider } from 'react-redux'
-import { phonebookStore } from 'Redux/myStore';
+import { phonebookStore, persistor } from 'Redux/myStore';
+import { PersistGate } from 'redux-persist/integration/react'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={phonebookStore}>
-
-    <BrowserRouter basename="/goit-react-hw-08-phonebook/">
-      <App />
-    </BrowserRouter>
-
+      <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter basename="/goit-react-hw-08-phonebook/">
+            <App />
+          </BrowserRouter>
+      </PersistGate>
     </Provider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
-
-// base url https://62860485f0e8f0bb7c0e5d72.mockapi.io/

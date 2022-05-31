@@ -50,6 +50,26 @@ export const userLogOut = createAsyncThunk(
         }
     }
 );
+export const fetchCurrentUSer = createAsyncThunk(
+    'authentication/currentUser',
+    async (_, {getState, rejectWithValue}) => {
+        const authToken = getState().registerAndLogIn.token
+            console.log(authToken)
+            if (authToken === null) {
+                console.log('пользователь неавторизирован')
+                return rejectWithValue()
+            };
+            token.set(authToken);
+           
+            try {
+                const response = await axios.get('/users/current');
+                return response.data
+            }
+            catch(error) {
+                console.log(error);
+            }
+    }
+);
 //contacts
 
 export const getUserContactsOperation = createAsyncThunk(

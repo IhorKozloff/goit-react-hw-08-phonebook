@@ -10,10 +10,17 @@ import { Login } from "Pages/Login";
 import { Register } from "Pages/Register";
 import { Layout } from "Pages/Layout";
 import { PhonebookPage } from "Pages/PhonebookPage"
+import { useEffect } from "react";
+import { fetchCurrentUSer } from "Redux/operations"
+import { useDispatch } from "react-redux";
 
 
 
 export const App = () =>  {
+const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCurrentUSer());
+  },[dispatch])
 
   // const  {filterValue, setfilterValue, filteredContacts} = useFilteredContacts(); 
 

@@ -6,18 +6,25 @@
 
  
 import { Route, Routes } from "react-router-dom";
+import { PrivateRoute } from "components/PrivateRoute/PrivateRoute";
+import { PublicRoute } from "components/PublicRoute/PublicRoute";
+import { HomePage } from "Pages/HomePage"
 import { Login } from "Pages/Login";
 import { Register } from "Pages/Register";
 import { Layout } from "Pages/Layout";
 import { PhonebookPage } from "Pages/PhonebookPage"
 import { useEffect } from "react";
 import { fetchCurrentUSer } from "Redux/operations"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+
 
 
 
 export const App = () =>  {
+
 const dispatch = useDispatch();
+const isUserRefreshing = useSelector(state => state.registerAndLogIn.isRefreshing);
+
   useEffect(() => {
     dispatch(fetchCurrentUSer());
   },[dispatch])
@@ -25,25 +32,39 @@ const dispatch = useDispatch();
   // const  {filterValue, setfilterValue, filteredContacts} = useFilteredContacts(); 
 
   return (
+    <>
+      {!isUserRefreshing && 
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route index element={<HomePage/>}/>
 
-    <Routes>
-      <Route path="/" element={<Layout/>}>
-        <Route path="login" element={<Login/>}></Route>
-        <Route path="register" element={<Register/>}/>
-        <Route path="phonebook" element={<PhonebookPage/>}/>
-      </Route>
-      
+            <Route path="login" 
+              element={
+                <PublicRoute redirectLink="/phonebook">
+                    <Login/>
+                </PublicRoute>
+              }
+            />
 
-    </Routes>
-      //   <h1>Phonebook</h1>
-      //   <SearchBar></SearchBar>
-          
-      //   <h1>Contacts</h1>
+            <Route path="register" 
+              element={
+                <PublicRoute redirectLink="/phonebook">
+                    <Register/>
+                </PublicRoute>
+              }
+            />
 
-      //   <SearchingFilter onFilterField={setfilterValue}/>
-
-      //   <ContactsList filterValue={filterValue} data={filteredContacts}/>
-
-  );
+            <Route path="phonebook" 
+              element={
+                <PrivateRoute redirectLink="/login">
+                  <PhonebookPage/>
+                </PrivateRoute>
+              }
+            />
+          </Route>
+        </Routes>
+      }
+    </>
+  )
 };
 

@@ -7,15 +7,34 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: aqua;
+  /* background-color: aqua; */
+  background: linear-gradient(139.69deg, #FAFF1E 11.79%, #E38800 83.81%);
+  height: 100vh;
   
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+    
 }
 
 ul {
+  list-style: none;
+  margin: 0;
   padding: 0;
+  
+}
+h1,h2,p {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  font-family: 'inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
 }

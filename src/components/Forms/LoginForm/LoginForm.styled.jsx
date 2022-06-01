@@ -1,14 +1,21 @@
 import styled from '@emotion/styled'
 import { Form } from 'formik'
-
+import loginFormWallpaper from '../../../img/loginFormWallpaper.jpg'
 
 export const UserLoginForm = styled(Form)`
     box-sizing: border-box;
     width: 400px;
-    border: 1px solid black;
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    padding-right: 60px;
+    padding: 60px;
+    padding-top: 150px;
     background-color: #FFF;
+    background-image: url("${loginFormWallpaper}");
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 10px;
 `;
+
+
+
+   

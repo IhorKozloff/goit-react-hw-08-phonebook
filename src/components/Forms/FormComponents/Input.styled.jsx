@@ -3,7 +3,6 @@ import { Field } from 'formik'
 
 
 export const InputStyled = styled(Field)`
-    color: red;
     border: none;
     border-bottom: 1px solid black;
     outline:none;

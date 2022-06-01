@@ -1,5 +1,7 @@
 import { Formik } from "formik";
 import { Input } from "components/Forms/FormComponents/Input";
+import { EntriesButton } from "components/Forms/FormComponents/EntriesButtons.styled";
+import { StyledLink } from "components/GlobalStyles/GlobalStyles.styled"
 import { UserLoginForm } from "components/Forms/LoginForm/LoginForm.styled";
 import { userLogInOperation } from 'Redux/operations';
 import { useDispatch } from "react-redux";
@@ -16,16 +18,21 @@ export const LoginForm = () => {
 
     return (
     <Formik initialValues={{email:"", password:""}} onSubmit={onFormSubmit}>
+        
         <UserLoginForm name='UserLoginForm'>
+        <h3 style={{marginBottom: "71px"}}>Log in into your account </h3>
             <Input type={'email'}>
-                email
+                Email
             </Input>
 
             <Input type={'text'}>
                 Password
             </Input>
-
-            <button type="submit" name="btn">Log In</button>
+            <p style={{marginTop: "63px", marginBottom: "8px", textAlign: "center"}}>
+                Forgot your password? <StyledLink to={"/register"}> Reestablish </StyledLink>
+            </p>
+            
+            <EntriesButton type="submit" name="btn">Log In</EntriesButton>
         </UserLoginForm>
     </Formik>
     );

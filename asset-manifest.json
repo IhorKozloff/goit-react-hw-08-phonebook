@@ -1,13 +1,16 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-08-phonebook/static/css/main.7968a274.css",
-    "main.js": "/goit-react-hw-08-phonebook/static/js/main.e671a4c4.js",
+    "main.css": "/goit-react-hw-08-phonebook/static/css/main.def0dc38.css",
+    "main.js": "/goit-react-hw-08-phonebook/static/js/main.0a708ddb.js",
+    "static/media/homepageWallpaperMans.png": "/goit-react-hw-08-phonebook/static/media/homepageWallpaperMans.faef69540a16075ec6c8.png",
+    "static/media/loginFormWallpaper.jpg": "/goit-react-hw-08-phonebook/static/media/loginFormWallpaper.170ee55cab4e41aa30ff.jpg",
+    "static/media/registerFormWallpaper.jpg": "/goit-react-hw-08-phonebook/static/media/registerFormWallpaper.059c90a1ac8903c56a53.jpg",
     "index.html": "/goit-react-hw-08-phonebook/index.html",
-    "main.7968a274.css.map": "/goit-react-hw-08-phonebook/static/css/main.7968a274.css.map",
-    "main.e671a4c4.js.map": "/goit-react-hw-08-phonebook/static/js/main.e671a4c4.js.map"
+    "main.def0dc38.css.map": "/goit-react-hw-08-phonebook/static/css/main.def0dc38.css.map",
+    "main.0a708ddb.js.map": "/goit-react-hw-08-phonebook/static/js/main.0a708ddb.js.map"
   },
   "entrypoints": [
-    "static/css/main.7968a274.css",
-    "static/js/main.e671a4c4.js"
+    "static/css/main.def0dc38.css",
+    "static/js/main.0a708ddb.js"
   ]
 }

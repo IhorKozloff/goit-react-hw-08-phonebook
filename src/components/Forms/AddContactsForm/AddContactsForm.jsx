@@ -6,7 +6,7 @@ import { addUserContactOperation } from 'Redux/operations';
 import { useDispatch } from 'react-redux';
 
 
-export const ContactsForm = ({setNewContact}) => {
+export const ContactsForm = () => {
     const dispatch = useDispatch();
     const onFormSubmit = (values, {resetForm}) => {
             const newContact = {

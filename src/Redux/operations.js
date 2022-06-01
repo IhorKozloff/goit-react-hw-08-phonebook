@@ -99,3 +99,17 @@ export const addUserContactOperation = createAsyncThunk(
     }
 
 )
+export const deleteUserContactOperation = createAsyncThunk(
+    'contacts/deleteContact',
+    async (deletedContactId) => {
+        try {
+            const result = await axios.post(`/contacts/${deletedContactId}`);
+            console.log(result)
+            return result.data
+        }
+        catch(error) {
+            console.log(error);
+        }
+    }
+
+)

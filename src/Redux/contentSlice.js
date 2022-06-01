@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUserContactsOperation, addUserContactOperation } from 'Redux/operations'
+import { getUserContactsOperation, addUserContactOperation, deleteUserContactOperation } from 'Redux/operations'
 
 
 
@@ -19,5 +19,8 @@ export const contentSlice = createSlice({
         [addUserContactOperation.fulfilled](state, actions) {
             state.push(actions.payload);
         },
+        [deleteUserContactOperation.fulfilled](state, actions){
+            state.filter(item => item.id !== actions.payload)
+        }
     }
 });

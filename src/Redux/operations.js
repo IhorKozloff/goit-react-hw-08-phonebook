@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+
+
 const token = {
     set (token) {
         axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -54,9 +55,8 @@ export const fetchCurrentUSer = createAsyncThunk(
     'authentication/currentUser',
     async (_, {getState, rejectWithValue}) => {
         const authToken = getState().registerAndLogIn.token
-            console.log(authToken)
+
             if (authToken === null) {
-                console.log('пользователь неавторизирован')
                 return rejectWithValue()
             };
             token.set(authToken);
@@ -103,9 +103,8 @@ export const deleteUserContactOperation = createAsyncThunk(
     'contacts/deleteContact',
     async (deletedContactId) => {
         try {
-            const result = await axios.post(`/contacts/${deletedContactId}`);
-            console.log(result)
-            return result.data
+            await axios.delete(`/contacts/${deletedContactId}`);
+            return deletedContactId;
         }
         catch(error) {
             console.log(error);

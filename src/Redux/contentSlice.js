@@ -19,8 +19,9 @@ export const contentSlice = createSlice({
         [addUserContactOperation.fulfilled](state, actions) {
             state.push(actions.payload);
         },
-        [deleteUserContactOperation.fulfilled](state, actions){
-            state.filter(item => item.id !== actions.payload)
+        [deleteUserContactOperation.fulfilled](state, actions) {
+            console.log(actions.payload)
+            return state
         }
     }
 });

@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 export const PrivateRoute = ({redirectLink, children}) => {
 
   const regAndLogState = useSelector(state => state.registerAndLogIn)
-  console.log(regAndLogState)
     
 
     if (regAndLogState.isLoggedIn === false) {

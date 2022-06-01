@@ -1,18 +1,20 @@
 import React from 'react';
 import { ContactsItem } from "components/ContactsItem/ContactsItem";
-import { useSelector } from 'react-redux';
+import { ContactsListComponent, ContactsListHeader, Dot } from "components/ContactsList/ContactsList.styled"
 
 
 
-export const ContactsList = () => {
+export const ContactsList = ({data}) => {
 
-    const contactsState = useSelector(state => state.contacts)
-    console.log(contactsState)
-    
+    return <ContactsListComponent>
+        <ContactsListHeader>
+            <Dot></Dot>
+            <Dot></Dot>
+            <Dot></Dot>
+        </ContactsListHeader>
 
-    return <ul>
         {
-           contactsState !== [] && contactsState.map(item => {
+           data !== [] && data.map(item => {
                 
                     return (
                         <ContactsItem key={item.id} 
@@ -25,5 +27,5 @@ export const ContactsList = () => {
               
             })
         }
-    </ul>
+    </ContactsListComponent>
 };

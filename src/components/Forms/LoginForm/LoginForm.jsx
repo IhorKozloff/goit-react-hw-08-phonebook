@@ -11,7 +11,6 @@ export const LoginForm = () => {
     const dispatch = useDispatch()
 
     const onFormSubmit = ({email, password}, {resetForm}) => {
-        console.log({email, password});
         dispatch(userLogInOperation({email, password}));
         resetForm();
     };

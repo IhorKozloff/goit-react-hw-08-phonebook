@@ -1,9 +1,12 @@
 import { useMemo, useState } from "react";
-import { useGetContactsQuery } from "Redux/contactsSlice";
+import { useSelector } from "react-redux";
+
 
 
 export const useFilteredContacts = () => {
-    const { data } = useGetContactsQuery();
+    // const dispatch = useDispatch()
+    const data = useSelector(state => state.contacts)
+    // const { data } = dispatch(getUserContactsOperation());
     const [filterValue, setfilterValue] = useState('');
   
     const filteredContacts = useMemo(() => {

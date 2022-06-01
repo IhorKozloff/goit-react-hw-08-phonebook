@@ -5,7 +5,6 @@ export const HomepageUpper = ({children}) => {
 
 
     return (
-
         <HomepageContainer className='homepageContainer'>
             <WelcomeTextWrapper>
                 <WelcomeTitle>Welcome to Homepage yours Phonebook application</WelcomeTitle>
@@ -14,6 +13,5 @@ export const HomepageUpper = ({children}) => {
             </WelcomeTextWrapper>
             {children}
         </HomepageContainer>
-        
     )
 }

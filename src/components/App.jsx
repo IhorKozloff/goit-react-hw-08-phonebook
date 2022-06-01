@@ -29,7 +29,7 @@ const isUserRefreshing = useSelector(state => state.registerAndLogIn.isRefreshin
     dispatch(fetchCurrentUSer());
   },[dispatch])
 
-  // const  {filterValue, setfilterValue, filteredContacts} = useFilteredContacts(); 
+
 
   return (
     <>

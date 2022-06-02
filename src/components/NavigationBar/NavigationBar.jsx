@@ -17,9 +17,9 @@ export const NavigationBar = () => {
 
 
                 
-                <LinksListItem>
+                {isLoggedIn === true &&<LinksListItem>
                     <StyledLink to={"/phonebook"}>Phonebook</StyledLink>
-                </LinksListItem>
+                </LinksListItem>}
 
             </LinksList>
 

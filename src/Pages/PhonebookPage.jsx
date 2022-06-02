@@ -30,7 +30,8 @@ export const PhonebookPage = () => {
         <PhonebookContainer className="phonebook-container">
             <ContactsForm/>
             <SearchingFilter onFilterField={setfilterValue}/>
-            <ContactsList data={filteredContacts}/> 
+            {filteredContacts.length !==0 && <ContactsList data={filteredContacts}/> }
+            
         </PhonebookContainer>
     )
 };

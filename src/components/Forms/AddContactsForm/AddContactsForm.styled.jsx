@@ -8,6 +8,7 @@ export const InputStyled = styled(Field)`
     border-radius: 5px;
     outline: none;
     height: 20px;
+    
 `;
 export const DataForm = styled(Form)`
     box-sizing: border-box;
@@ -21,7 +22,7 @@ export const DataForm = styled(Form)`
     align-items: center;
     position: absolute;
     right: 45px;
-    bottom: 135px;
+    bottom: 160px;
 
 `;
 
